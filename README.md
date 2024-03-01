@@ -7,11 +7,11 @@ enables you to supply a Method that
 
 Example of inversing an image's colors (including alpha channel!)
 ```cs
-      public static int[] example(int[] inp)
-      {
-          return inp.Reverse().ToArray();
-      }
+public static int[] example(int[] inp)
+{
+    return inp.Reverse().ToArray();
+}
 ...
-     Stream stream = new FileStream(path, FileMode.Open);
-     QuickTGA.QuickTGA.editTGA(stream, example);
+Stream stream = new FileStream(path, FileMode.Open);
+QuickTGA.QuickTGA.editTGA(stream, example);
 ```
