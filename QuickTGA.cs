@@ -4,8 +4,8 @@ namespace QuickTGA
     {
         // Quick color manipulation for TGA files
 
-     
-        public static void editColor(Stream newStream, Func<int[],int[]> colorReplaceMethod)
+
+        private static void editColor(Stream newStream, Func<int[],int[]> colorReplaceMethod)
         {
             int old_b = newStream.ReadByte();
             int old_g = newStream.ReadByte();
@@ -18,7 +18,7 @@ namespace QuickTGA
             newStream.WriteByte((byte)newData[0]); // r
             newStream.WriteByte((byte)newData[3]); // a
         }
-        public static void editColorMap1(Stream newStream, Func<int[], int[]> colorReplaceMethod)
+        private static void editColorMap1(Stream newStream, Func<int[], int[]> colorReplaceMethod)
         {
             newStream.Position = 5;
 
@@ -33,7 +33,7 @@ namespace QuickTGA
                 editColor(newStream, colorReplaceMethod);
             }
         }
-        public static void editColorMap0(Stream newStream, Func<int[], int[]> colorReplaceMethod)
+        private static void editColorMap0(Stream newStream, Func<int[], int[]> colorReplaceMethod)
         {
             newStream.Position = 12;
             byte[] buf2 = new byte[2];
@@ -54,7 +54,7 @@ namespace QuickTGA
                 }
             }
         }
-        public static Stream changeColours(Stream tgaStream, Func<int[], int[]> colorReplaceMethod)
+        public static Stream editTGA(Stream tgaStream, Func<int[], int[]> colorReplaceMethod)
         {
             Stream newStream = new MemoryStream();
             tgaStream.Position = 0;
