@@ -11,9 +11,7 @@ Example of inversing an image's colors (including alpha channel!)
       {
           return inp.Reverse().ToArray();
       }
-```
 ...
-```cs
      Stream stream = new FileStream(path, FileMode.Open);
      QuickTGA.QuickTGA.editTGA(stream, example);
 ```
