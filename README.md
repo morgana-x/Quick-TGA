@@ -13,5 +13,5 @@ public static int[] example(int[] inp)
 }
 ...
 Stream stream = new FileStream(path, FileMode.Open);
-QuickTGA.QuickTGA.editTGA(stream, example);
+Stream newStream = QuickTGA.QuickTGA.editTGA(stream, example);
 ```
